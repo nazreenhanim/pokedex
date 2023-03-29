@@ -2,10 +2,12 @@
 <html>
 <head>
     <title>test</title>
-    
+</head>
 <body>
-    <p>test</p>
-    {{-- <h1>{{ $pokemons['name'] }}</h1> --}}
+    <h1>Pokedex</h1>
+    {{-- @foreach ($pokemon as $mon)
+        <p>{{$mon->id}}</p>
+    @endforeach --}}
 </body>
 </html>
 

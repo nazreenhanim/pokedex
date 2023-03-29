@@ -6,15 +6,14 @@ use Illuminate\Support\Facades\Http;
 
 class PokeAPIController extends Controller
 {
-    public function show($name)
+    public function getPokemon()
     {
-        $client = new \GuzzleHttp\Client();
-        $response = $client->request(
-            'GET',
-            'https://pokeapi.co/api/v2/pokemon/' . $name
-        );
-        $pokemon = json_decode($response->getBody());
+        $pokemon = Http::get('https://pokeapi.co/api/v2/pokemon/');
 
-        return view('pokemon.show', compact('pokemon'));
+        return json_decode($pokemon);
+
+        // return view('pokemon', [
+        //     'pokemon' => json_decode($pokemon),
+        // ]);
     }
 }
