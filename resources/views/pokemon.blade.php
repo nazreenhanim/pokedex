@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title>test</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-    <h1>Pokedex</h1>
+
+<body class="bg-black text-white lg:mx-[100px]">
+    <p class="underline">Pokedex</p>
+    
     {{-- @foreach ($pokemon as $mon)
-        <p>{{$mon->id}}</p>
+        <p>{{$mon->results[0]->id}}</p>
     @endforeach --}}
 </body>
 </html>
