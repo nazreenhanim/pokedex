@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      sans: ['Poppins', 'sans-serif'],
+      mono: ['Space Mono', 'monospace'],
+    },
   },
   plugins: [],
 }

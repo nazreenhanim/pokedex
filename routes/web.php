@@ -20,6 +20,4 @@ Route::get('/', function () {
 
 Route::get('/pokemon', [PokeAPIController::class, 'getPokemon']);
 
-// Route::get('/pokemon', function () {
-//     return view('pokemon');
-// });
+Route::get('/pokemon/{id}', [PokeAPIController::class, 'getMonster']);

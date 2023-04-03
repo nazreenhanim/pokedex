@@ -8,12 +8,21 @@ class PokeAPIController extends Controller
 {
     public function getPokemon()
     {
-        $pokemon = Http::get('https://pokeapi.co/api/v2/pokemon/');
+        $pokemon = Http::get(
+            'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0'
+        );
+        $data = $pokemon->json();
 
-        // return json_decode($pokemon);
+        return view('pokemon', ['pokemon' => $data['results']]);
+    }
 
-        return view('pokemon', [
-            'pokemon' => json_decode($pokemon),
-        ]);
+    public function getMonster()
+    {
+        $monster = Http::get('https://pokeapi.co/api/v2/pokemon/2');
+        $data2 = $monster->json();
+
+        return $data2;
+
+        // return view('pokemon.id', ['monster' => $data2['abilities']]);
     }
 }
